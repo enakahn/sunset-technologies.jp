@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunset Technologies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fffaf5;
+      color: #333;
+    }
+    header {
+      color: #ff8c00;
+      background-color: black;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff8c00;
+    }
+
+    @media (max-width: 767px) {
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 300;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 70%;
+        max-width: 300px;
+        padding: 2rem 1rem;
+        box-shadow: -4px 0 6px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 200;
+      }
+
+      .nav-open .nav-links {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        margin: 1rem 0;
+        display: block;
+      }
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #ff8c00;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ffa733;
+    }
+
+    .hero {
+      background-image: url('assets/sunset_001.png');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: black;
+      padding: 2rem;
+      height: 60vh;
+    }
+    .hero p {
+      font-size: 1rem;
+      max-width: 600px;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    section {
+      padding: 3rem 2rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .mission {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .mission .tagline {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff8c00;
+      margin-bottom: 1rem;
+    }
+    .mission .description {
+      font-size: 1.0rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      background-color: #fff6ee;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+
+    @media (min-width: 768px) {
+      .product-item {
+        flex-direction: row;
+        text-align: left;
+        margin: 0 auto 2rem
+      }
+    }
+
+    .product-item img {
+      width: 80px;
+      height: 80px;
+      background-color: #fbd4a7;
+      border-radius: 50%;
+    }
+    footer {
+      color: #ff8c00;
+      background-color: black;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sunset Technologies</h1>
+  
+    <!-- ハンバーガーメニュー -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  
+    <!-- ナビゲーション -->
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  
+
+  <div class="hero">
+    <p><b>「人生、楽しまなくっちゃ。<br>夕方が一日でいちばんいい時間なんだ。<br>脚を伸ばして、のんびりするのさ」</b><br><br>
+      ― カズオ・イシグロ『日の名残り』
+    </p>
+  </div>
+
+  <div class="mission">
+    <p class="tagline">Warm light for every heart.</p>
+    <p class="description">サンセット・テクノロジーズは、<br>人の心を温かく照らすプロダクトを作り続ける<br>日本のテクノロジー企業です。</p>
+  </div>  
+
+  <section id="products">
+    <h2>Products</h2>
+    <div class="product">
+      <div class="product-item">
+        <img src="assets/sunset_001.png" alt="Sunset Diary">
+        <div>
+          <strong>Sunset Diary</strong><br>
+          カップルのための交換日記アプリ。<br>
+          ふたりの日常を共有し、お互いへの理解と愛情を深めることができます。<br>
+          iOSとAndroidで2025年春に提供予定。
+        </div>
+      </div>
+
+      <br>
+
+      <!-- <div class="product-item">
+        <img src="assets/sunset_001.png" alt="...">
+        <div>
+          サンセット・テクノロジーズは、日々の小さな幸せに気づき、育むためのプロダクトを今後も創り続けます。
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div style="text-align:center">
+      サンセット・テクノロジーズ合同会社<br>
+      <a href="mailto:info@sunset-technologies.jp">info@sunset-technologies.jp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sunset Technologies, LLC</p>
+  </footer>
+  
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('nav-open');
+    }
+  
+    // ナビリンクをタップしたら自動でメニューを閉じる
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function () {
+          document.body.classList.remove('nav-open');
+        });
+      });
+    });
+  </script>  
+</body>
+</html>
